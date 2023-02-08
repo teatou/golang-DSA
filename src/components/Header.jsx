@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {RxCross1} from 'react-icons/rx';
 
 export default function Header({query, setQuery}) {
 
@@ -8,13 +9,23 @@ export default function Header({query, setQuery}) {
     }
 
     return (
-        <nav>
-          <input 
-          onChange={e => setQuery(e.target.value)}
-          value={query}/>
-          <button onClick={clearSearch}>
-            clear
-          </button>
-        </nav>
+        <header>
+          <nav>
+            <div className='search'>
+              <input 
+                onChange={e => setQuery(e.target.value)}
+                value={query}
+                placeholder='Search...'/>
+              <button onClick={clearSearch}>
+                <RxCross1/>
+              </button>
+            </div>
+            <div className='links'>
+              <span>Algorithms</span>
+              <span>|</span>
+              <span>Data Structures</span>
+            </div>
+          </nav>
+        </header>
     )
 }

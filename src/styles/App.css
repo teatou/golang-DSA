@@ -4,13 +4,123 @@
   box-sizing: border-box;
 }
 
-.App {
-  height: 100vh;
-  width: 100vw;
-  background-color: #ffffff;
+body {
+  overflow-x: hidden;
+  background-color: #ebebeb
 }
 
-main {
+h1 {
+  font-family: sans-serif;
+  padding: 15px 0;
+}
+
+.App {
+  width: 100vw;
+  color: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  font-family: "Roobert";
+  font-style: normal;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #1c1c1cef;
+  color: #fefefe;
+}
+
+nav {
+  font-family: sans-serif;
   max-width: 1000px;
-  margin:0 auto;
+  width: 100%;
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search {
+  display: flex;
+}
+
+.search input {
+  width: 190px;
+  border: 3px solid #1c1c1c;
+  border-right: none;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search button {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #1c1c1c;
+  background: #1c1c1c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search button:hover {
+  color: rgb(192, 191, 191);
+  transition: all 0.3s;
+}
+
+.links * {
+  padding-left: 15px;
+}
+
+.container {
+  padding: 30px 15px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.post-container {
+  margin: 45px 0;
+}
+
+.code-container {
+  padding: 15px;
+  background-color: #fefefe;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+code::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+.code-container button {
+  height: 36px;
+  width: 36px;
+  padding-top: 3px;
+}
+
+.code-container button:hover {
+  cursor: pointer;
+}
+
+@media (width<1000px) {
+  .post-container pre {
+    overflow-x: scroll;
+  }
+}
+
+@media (width<450px) {
+  .search input {
+    width: 150px;
+  }
 }

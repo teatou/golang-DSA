@@ -2,13 +2,17 @@ import './styles/App.css'
 import Header from './components/Header'
 import { useMemo, useState } from 'react'
 import PostsList from './components/PostsList'
+import { bubbleSort, quickSort, selectionSort, insertionSort, binarySearch, binaryTree } from './Items'
 
 function App() {
   const [posts, _] = useState(
     [
-      {id: 1, title: 'Example', code:`print(1)\nprint(2)`},
-      {id: 2, title: 'Example', code:`print(1)\nprint(2)`},
-      {id: 3, title: 'Example', code:`print(1)\nprint(2)`},
+      {id: 1, title: 'Bubble sort', code:bubbleSort},
+      {id: 2, title: 'Quick sort', code:quickSort},
+      {id: 3, title: 'Selection sort', code:selectionSort},
+      {id: 4, title: 'Incertion sort', code:insertionSort},
+      {id: 5, title: 'Binary search', code:binarySearch},
+      {id: 6, title: 'Binary tree', code:binaryTree},
     ]
   )
 
@@ -20,10 +24,8 @@ function App() {
 
   return (
     <div className="App">
-      <main>
-        <Header query={searchQuery} setQuery={setSearchQuery}/>
-        <PostsList posts={foundPosts}/>
-      </main>
+      <Header query={searchQuery} setQuery={setSearchQuery}/>
+      <PostsList posts={foundPosts}/>
     </div>
   )
 }
